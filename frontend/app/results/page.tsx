@@ -152,20 +152,20 @@ export default function ResultsPage() {
 
   if (loading || !result) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#FAFAFC] via-white to-[#DFF5E3]/20">
         <div className="text-center">
           <div className="relative mb-8">
-            <div className="w-24 h-24 border-[6px] border-indigo-100 border-t-indigo-600 rounded-full animate-spin mx-auto"></div>
+            <div className="w-24 h-24 border-[6px] border-[#E6D6FF] border-t-[#E6D6FF] rounded-full animate-spin mx-auto"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <Activity className="text-indigo-600 animate-pulse" size={36} />
+              <Activity className="text-[#E6D6FF] animate-pulse" size={36} />
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">Analyzing Your Assessment</h3>
-          <p className="text-slate-600 text-lg">Generating comprehensive diagnostic report...</p>
+          <h3 className="text-2xl font-bold text-[#2B2B2B] mb-3 tracking-tight">Analyzing Your Assessment</h3>
+          <p className="text-[#6B7280] text-lg">Generating comprehensive diagnostic report...</p>
           <div className="mt-6 flex items-center justify-center gap-2">
-            <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-            <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-            <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+            <div className="w-2 h-2 bg-[#E6D6FF] rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
+            <div className="w-2 h-2 bg-[#E6D6FF] rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
+            <div className="w-2 h-2 bg-[#E6D6FF] rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
           </div>
         </div>
       </div>
@@ -182,25 +182,25 @@ export default function ResultsPage() {
   const educationalContent = getEducationalContent(result.risk_level);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-12 px-4 print:bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-white to-[#DFF5E3]/15 py-12 px-4 print:bg-white relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl -z-10 print:hidden"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-purple-400/10 to-pink-400/10 rounded-full blur-3xl -z-10 print:hidden"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-teal-400/5 to-blue-400/5 rounded-full blur-3xl -z-10 print:hidden"></div>
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-[#FADADD]/10 to-[#E6D6FF]/10 rounded-full blur-3xl -z-10 print:hidden"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#E6D6FF]/10 to-[#D6EAF8]/10 rounded-full blur-3xl -z-10 print:hidden"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#DFF5E3]/5 to-[#D6EAF8]/5 rounded-full blur-3xl -z-10 print:hidden"></div>
 
       <div className="max-w-7xl mx-auto space-y-8">
         {/* BACK BUTTON */}
         <button
           onClick={() => router.push("/")}
-          className="inline-flex items-center gap-2 px-4 py-2 text-slate-700 hover:text-indigo-700 bg-white/80 hover:bg-white border border-slate-200 hover:border-indigo-300 rounded-xl transition-all print:hidden group shadow-sm hover:shadow-md"
+          className="inline-flex items-center gap-2 px-4 py-2 text-[#6B7280] hover:text-[#E6D6FF] bg-white/80 hover:bg-white border border-[#E5E7EB] hover:border-[#E6D6FF] rounded-xl transition-all print:hidden group shadow-sm hover:shadow-md"
         >
           <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
           <span className="font-semibold">Back to Home</span>
         </button>
 
         {/* HEADER CARD */}
-        <div className="bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-slate-200/60 overflow-hidden print:shadow-none">
-          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white p-10 relative overflow-hidden">
+        <div className="bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB]/60 overflow-hidden print:shadow-none">
+          <div className="bg-gradient-to-r from-[#FADADD] via-[#E6D6FF] to-[#D6EAF8] text-white p-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
             <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -210,7 +210,7 @@ export default function ResultsPage() {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold mb-3 tracking-tight">PCOS Diagnostic Report</h1>
-                  <p className="text-slate-300 text-sm flex items-center gap-2">
+                  <p className="text-white/80 text-sm flex items-center gap-2">
                     <Calendar size={16} />
                     {new Date(result.assessment_date || Date.now()).toLocaleDateString('en-US', { 
                       weekday: 'long', 
@@ -219,9 +219,9 @@ export default function ResultsPage() {
                       day: 'numeric' 
                     })}
                   </p>
-                  <p className="text-slate-400 text-xs mt-1 uppercase tracking-wider flex items-center gap-2">
+                  <p className="text-white/70 text-xs mt-1 uppercase tracking-wider flex items-center gap-2">
                     <Sparkles size={12} />
-                    AI-Powered Multimodal Analysis
+                    ML-Powered Multimodal Analysis
                   </p>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function ResultsPage() {
                 </button>
                 <button
                   onClick={handleDownloadPDF}
-                  className="flex items-center gap-2 px-5 py-3 bg-white hover:bg-gray-50 text-indigo-700 rounded-xl transition-all hover:scale-105 shadow-xl font-semibold"
+                  className="flex items-center gap-2 px-5 py-3 bg-white hover:bg-gray-50 text-[#E6D6FF] rounded-xl transition-all hover:scale-105 shadow-xl font-semibold"
                 >
                   <Download size={20} />
                   <span className="hidden sm:inline">Download PDF</span>
@@ -729,7 +729,7 @@ export default function ResultsPage() {
           <p className="flex items-center justify-center gap-2 flex-wrap">
             <span className="inline-flex items-center gap-1">
               <Sparkles size={14} className="text-indigo-600" />
-              Generated by PCOS AI Assessment Platform
+              Generated by Maya Assessment Platform
             </span>
             <span className="text-slate-400">•</span>
             <span>{new Date().toLocaleString()}</span>

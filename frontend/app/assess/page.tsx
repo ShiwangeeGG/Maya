@@ -431,23 +431,23 @@ export default function AssessPage() {
   // MODERN UI
   // ======================================================
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans p-6 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/15 to-[#D6EAF8]/15 text-[#2B2B2B] font-sans p-6 pb-20">
       {/* HEADER */}
       <header className="max-w-7xl mx-auto mb-8 flex items-center gap-4">
-        <div className="bg-teal-600 p-3 rounded-xl text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#FADADD] to-[#E6D6FF] p-3 rounded-xl text-white shadow-lg shadow-[#E6D6FF]/30">
           <Activity size={28} />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-[#2B2B2B]">
             PCOS Risk Assessment
           </h1>
-          <p className="text-slate-500 text-sm">Clinical AI Diagnostic Suite</p>
+          <p className="text-[#6B7280] text-sm">Clinical ML Diagnostic Suite</p>
         </div>
       </header>
 
       <form onSubmit={handleSubmit} className="max-w-7xl mx-auto space-y-6">
         {/* Mandatory Field Notice */}
-        <div className="bg-blue-50 border border-blue-200 text-blue-800 p-3 rounded-lg text-sm">
+        <div className="bg-[#D6EAF8]/40 border border-[#D6EAF8]/60 text-[#2B2B2B] p-3 rounded-lg text-sm">
           <p>
             <span className="font-semibold">Note:</span> Fields marked with{" "}
             <span className="text-red-600 font-bold">*</span> are mandatory for
@@ -460,7 +460,7 @@ export default function AssessPage() {
           icon={<UploadCloud size={18} />}
         >
           <div className="space-y-3">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-[#6B7280]">
               Upload a lab report or ultrasound summary (PDF). Fields will be
               auto-filled and can be reviewed before submission.
             </p>
@@ -477,14 +477,14 @@ export default function AssessPage() {
             />
 
             {docUploading && (
-              <p className="text-teal-600 text-sm flex items-center gap-2">
+              <p className="text-[#E6D6FF] text-sm flex items-center gap-2">
                 <Activity className="animate-spin" size={16} />
                 Parsing document...
               </p>
             )}
 
             {docStatus && (
-              <p className="text-slate-600 text-sm font-medium">{docStatus}</p>
+              <p className="text-[#6B7280] text-sm font-medium">{docStatus}</p>
             )}
           </div>
         </Card>

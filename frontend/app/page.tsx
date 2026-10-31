@@ -42,22 +42,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 text-slate-900 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-violet-50/40 text-slate-900 font-sans">
       {/* ================= HERO ================= */}
       <section className="relative pt-32 pb-28 overflow-hidden">
-        {/* Background accents (subtle & clean) */}
-        <div className="absolute -top-32 right-0 w-[600px] h-[600px] bg-emerald-300/20 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-300/20 rounded-full blur-3xl -z-10" />
+        {/* Background accents (soft & feminine) */}
+        <div className="absolute -top-32 right-0 w-[600px] h-[600px] bg-fuchsia-200/30 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-200/30 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-pink-50 border border-pink-200 text-fuchsia-700 text-xs font-bold uppercase tracking-wider mb-8">
             <Zap size={14} />
             Multimodal Clinical Decision Support
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-tight">
-            AI-Driven PCOS <br />
-            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            ML-based PCOS <br />
+            <span className="bg-gradient-to-r from-fuchsia-600 to-violet-600 bg-clip-text text-transparent">
               Risk Assessment Platform
             </span>
           </h1>
@@ -65,8 +65,8 @@ export default function Home() {
           <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
             A research-grade platform combining structured clinical data and
             pelvic ultrasound imaging with{" "}
-            <span className="font-semibold text-emerald-600">
-              explainable AI
+            <span className="font-semibold text-fuchsia-600">
+              explainable ML
             </span>{" "}
             to estimate PCOS risk and support early screening.
           </p>
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => router.push("/assess")}
-              className="group px-9 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-bold text-lg hover:from-emerald-700 hover:to-teal-700 transition-all shadow-xl flex items-center gap-3"
+              className="group px-9 py-4 bg-gradient-to-r from-fuchsia-600 to-violet-600 text-white rounded-xl font-bold text-lg hover:from-fuchsia-700 hover:to-violet-700 transition-all shadow-xl flex items-center gap-3"
             >
               Start Assessment
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -82,7 +82,7 @@ export default function Home() {
 
             <button
               onClick={() => router.push("/dashboard")}
-              className="px-9 py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-lg hover:border-emerald-300 hover:bg-slate-50 transition-all"
+              className="px-9 py-4 bg-white border border-pink-200 text-slate-700 rounded-xl font-bold text-lg hover:border-fuchsia-300 hover:bg-pink-50 transition-all"
             >
               View Dashboard
             </button>
@@ -90,7 +90,7 @@ export default function Home() {
 
           {/* Trust row */}
           <div className="mt-16 flex flex-wrap justify-center gap-10 text-sm text-slate-500">
-            <Trust icon={<ShieldCheck />} text="Ethical & Safe AI" />
+            <Trust icon={<ShieldCheck />} text="Ethical & Safe ML" />
             <Trust icon={<Eye />} text="Explainable Results" />
             <Trust icon={<Activity />} text="Clinically Evaluated Models" />
           </div>
@@ -158,12 +158,12 @@ export default function Home() {
       </section>
 
       {/* ================= FEATURES ================= */}
-      <section className="py-28 bg-gradient-to-br from-slate-900 via-emerald-900 to-teal-900 text-white">
+      <section className="py-28 bg-gradient-to-br from-fuchsia-900 via-violet-900 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-black mb-4">Platform Capabilities</h2>
-            <p className="text-emerald-100 max-w-2xl mx-auto">
-              Designed as a full-stack AI decision support system — not just a
+            <p className="text-pink-100 max-w-2xl mx-auto">
+              Designed as a full-stack ML decision support system — not just a
               prediction model.
             </p>
           </div>
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Feature
               icon={<Layers />}
-              title="Multimodal AI Fusion"
+              title="Multimodal ML Fusion"
               desc="Tabular CatBoost models and CNN predictions combined via a meta-learning strategy."
             />
             <Feature
@@ -181,7 +181,7 @@ export default function Home() {
             />
             <Feature
               icon={<BrainCircuit />}
-              title="Personalized AI Insights"
+              title="Personalized ML Insights"
               desc="Recommendations adapt to patient-specific inputs and confidence levels."
             />
             <Feature
@@ -196,7 +196,7 @@ export default function Home() {
             />
             <Feature
               icon={<ShieldCheck />}
-              title="Ethical AI Design"
+              title="Ethical Design"
               desc="Built strictly as a decision support tool, not a diagnostic authority."
             />
           </div>
@@ -204,24 +204,24 @@ export default function Home() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-24  bg-slate-50 text-center">
-        <h2 className="text-4xl md:text-5xl font-black mb-6">
+      <section className="py-24  bg-pink-50 text-center">
+        <h2 className="text-4xl md:text-5xl font-black mb-6 text-fuchsia-900">
           Begin Your PCOS Risk Assessment
         </h2>
-        <p className="text-slate-600 text-lg mb-10 max-w-2xl mx-auto">
-          Obtain probabilistic risk estimates with transparent AI explanations
+        <p className="text-fuchsia-700 text-lg mb-10 max-w-2xl mx-auto">
+          Obtain probabilistic risk estimates with transparent ML explanations
           to support early screening.
         </p>
         <button
           onClick={() => router.push("/assess")}
-          className="px-10 py-4 bg-white text-slate-600 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all shadow-xl cursor-pointer"
+          className="px-10 py-4 bg-gradient-to-r from-fuchsia-600 to-violet-600 text-white rounded-xl font-bold text-lg hover:from-fuchsia-700 hover:to-violet-700 transition-all shadow-xl cursor-pointer"
         >
           Start Assessment
         </button>
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700">
+      <footer className="bg-gradient-to-br from-fuchsia-900 via-violet-900 to-indigo-950 border-t border-violet-800">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Brand Column */}
@@ -229,13 +229,13 @@ export default function Home() {
               <div className="flex items-center">
                 <img
                   src="/logo.png"
-                  alt="PCOS AI Logo"
+                  alt="Maya Logo"
                   className="w-10 h-10 object-contain brightness-0 invert"
                 />
-                <span className="text-xl font-black text-white mb-4">PCOS AI</span>
+                <span className="text-xl font-black text-white mb-4">Maya</span>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Multimodal AI platform for PCOS risk assessment with explainable
+              <p className="text-pink-200 text-sm leading-relaxed">
+                Multimodal ML platform for PCOS risk assessment with explainable
                 insights.
               </p>
               <div className="flex gap-3 mt-6">
@@ -430,7 +430,7 @@ export default function Home() {
 
             {/* Copyright */}
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
-              <p>© 2025 PCOS AI Platform. All rights reserved.</p>
+              <p>© 2025 Maya Platform. All rights reserved.</p>
               <div className="flex items-center gap-6">
                 <span className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>

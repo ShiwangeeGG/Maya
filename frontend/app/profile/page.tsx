@@ -75,10 +75,10 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#FAFAFC]">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-teal-600 mx-auto mb-4" />
-          <p className="text-slate-600 font-medium">Loading profile…</p>
+          <Loader2 className="w-12 h-12 animate-spin text-[#E6D6FF] mx-auto mb-4" />
+          <p className="text-[#6B7280] font-medium">Loading profile…</p>
         </div>
       </div>
     );
@@ -86,12 +86,12 @@ export default function ProfilePage() {
 
   if (error || !profile) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-        <div className="bg-red-50 border border-red-200 rounded-xl p-6 flex gap-3 max-w-md">
-          <AlertCircle className="text-red-600 mt-1" />
+      <div className="min-h-screen flex items-center justify-center bg-[#FAFAFC] px-4">
+        <div className="bg-rose-50/80 border border-rose-200/50 rounded-xl p-6 flex gap-3 max-w-md">
+          <AlertCircle className="text-rose-600 mt-1" />
           <div>
-            <p className="font-semibold text-red-900">Unable to load profile</p>
-            <p className="text-sm text-red-700">{error}</p>
+            <p className="font-semibold text-rose-900">Unable to load profile</p>
+            <p className="text-sm text-rose-700">{error}</p>
           </div>
         </div>
       </div>
@@ -99,13 +99,13 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/15 to-[#D6EAF8]/15 px-4 py-12">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
           <button
             onClick={() => router.back()}
-            className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-teal-600"
+            className="flex items-center gap-2 text-sm font-medium text-[#6B7280] hover:text-[#E6D6FF]"
           >
             <ArrowLeft size={18} />
             Back
@@ -113,7 +113,7 @@ export default function ProfilePage() {
 
           <button
             onClick={() => router.push("/profile/edit")}
-            className="flex items-center gap-2 px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-lg font-semibold shadow"
+            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#FADADD] to-[#E6D6FF] hover:from-[#F5C8D3] hover:to-[#DCC4F0] text-white rounded-lg font-semibold shadow-lg shadow-[#E6D6FF]/30"
           >
             <Edit size={16} />
             Edit Profile
@@ -121,7 +121,7 @@ export default function ProfilePage() {
         </div>
 
         {/* PROFILE HEADER */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+        <div className="bg-white rounded-2xl border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-6">
           <div className="flex items-center gap-6">
             {/* Profile Picture */}
             {profile.profile_picture ? (
@@ -131,25 +131,25 @@ export default function ProfilePage() {
                 className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
               />
             ) : (
-              <div className="w-24 h-24 rounded-full bg-linear-to-br from-teal-100 to-purple-100 flex items-center justify-center border-4 border-white shadow-lg">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#FADADD]/30 to-[#E6D6FF]/30 flex items-center justify-center border-4 border-white shadow-lg">
                 {" "}
-                <User size={40} className="text-slate-600" />{" "}
+                <User size={40} className="text-[#6B7280]" />{" "}
               </div>
             )}
 
             <div className="flex-1">
-              <h1 className="text-2xl font-bold text-slate-900">
+              <h1 className="text-2xl font-bold text-[#2B2B2B]">
                 {profile.first_name} {profile.last_name}
               </h1>
-              <p className="text-slate-600 flex items-center gap-2 mt-1">
+              <p className="text-[#6B7280] flex items-center gap-2 mt-1">
                 <Mail size={16} /> {profile.email}
               </p>
             </div>
 
             {profile.is_complete && (
-              <div className="flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-lg">
-                <CheckCircle2 className="text-green-600" size={18} />
-                <span className="text-sm font-semibold text-green-700">
+              <div className="flex items-center gap-2 px-4 py-2 bg-[#DFF5E3]/40 border border-[#DFF5E3]/60 rounded-lg">
+                <CheckCircle2 className="text-[#DFF5E3]" size={18} />
+                <span className="text-sm font-semibold text-[#2B2B2B]">
                   Profile Complete
                 </span>
               </div>
@@ -197,14 +197,14 @@ export default function ProfilePage() {
           </InfoGrid>
 
           {bmi && (
-            <div className="mt-6 bg-teal-50 border border-teal-200 rounded-xl p-4 flex items-center justify-between">
+            <div className="mt-6 bg-gradient-to-br from-[#D6EAF8]/40 to-[#DFF5E3]/40 border border-[#D6EAF8]/60 rounded-xl p-4 flex items-center justify-between">
               <div>
-                <p className="text-sm font-semibold text-teal-900">BMI</p>
-                <p className="text-xs text-teal-700">
+                <p className="text-sm font-semibold text-[#2B2B2B]">BMI</p>
+                <p className="text-xs text-[#6B7280]">
                   Calculated from height and weight
                 </p>
               </div>
-              <p className="text-3xl font-bold text-teal-600">{bmi}</p>
+              <p className="text-3xl font-bold text-[#E6D6FF]">{bmi}</p>
             </div>
           )}
         </Section>
@@ -223,9 +223,9 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm">
-      <div className="px-6 py-4 border-b">
-        <h2 className="text-lg font-bold text-slate-800">{title}</h2>
+    <div className="bg-white rounded-2xl border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+      <div className="px-6 py-4 border-b border-[#E5E7EB]">
+        <h2 className="text-lg font-bold text-[#2B2B2B]">{title}</h2>
       </div>
       <div className="p-6">{children}</div>
     </div>
@@ -249,11 +249,11 @@ function Info({
 }) {
   return (
     <div className="space-y-1">
-      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase">
-        <span className="text-teal-600">{icon}</span>
+      <div className="flex items-center gap-2 text-xs font-semibold text-[#6B7280] uppercase">
+        <span className="text-[#E6D6FF]">{icon}</span>
         {label}
       </div>
-      <div className="text-slate-900 font-medium">{children}</div>
+      <div className="text-[#2B2B2B] font-medium">{children}</div>
     </div>
   );
 }

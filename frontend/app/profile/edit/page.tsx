@@ -220,41 +220,41 @@ export default function EditProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#FAFAFC]">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-teal-600 mx-auto mb-4" />
-          <p className="text-slate-600 font-medium">Loading profile...</p>
+          <Loader2 className="w-12 h-12 animate-spin text-[#E6D6FF] mx-auto mb-4" />
+          <p className="text-[#6B7280] font-medium">Loading profile...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-purple-50/30 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/15 to-[#D6EAF8]/15 py-12 px-4">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#FADADD]/8 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E6D6FF]/8 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <button
             onClick={() => router.back()}
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-teal-600 transition-colors mb-4 group"
+            className="inline-flex items-center gap-2 text-[#6B7280] hover:text-[#E6D6FF] transition-colors mb-4 group"
           >
             <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back</span>
           </button>
           
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-gradient-to-br from-teal-600 to-purple-600 rounded-2xl text-white shadow-lg">
+            <div className="p-3 bg-gradient-to-br from-[#FADADD] to-[#E6D6FF] rounded-2xl text-white shadow-lg">
               <User size={32} />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-slate-900">
+              <h1 className="text-3xl font-bold text-[#2B2B2B]">
                 {isNewUser ? "Complete Your Profile" : "Edit Profile"}
               </h1>
-              <p className="text-slate-600 mt-1">
+              <p className="text-[#6B7280] mt-1">
                 {isNewUser 
                   ? "Let's get to know you better for personalized care" 
                   : "Update your personal and medical information"}
@@ -265,29 +265,29 @@ export default function EditProfilePage() {
 
         {/* Success/Error Messages */}
         {success && (
-          <div className="mb-6 bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3 animate-fadeIn">
-            <CheckCircle2 className="text-emerald-600 shrink-0 mt-0.5" size={20} />
+          <div className="mb-6 bg-[#DFF5E3]/40 border border-[#DFF5E3]/60 rounded-xl p-4 flex items-start gap-3 animate-fadeIn">
+            <CheckCircle2 className="text-[#DFF5E3] shrink-0 mt-0.5" size={20} />
             <div>
-              <p className="text-emerald-900 font-semibold text-sm">Profile Saved Successfully!</p>
-              <p className="text-emerald-700 text-sm mt-0.5">Redirecting...</p>
+              <p className="text-[#2B2B2B] font-semibold text-sm">Profile Saved Successfully!</p>
+              <p className="text-[#6B7280] text-sm mt-0.5">Redirecting...</p>
             </div>
           </div>
         )}
 
         {error && (
-          <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3 animate-shake">
-            <AlertCircle className="text-red-600 shrink-0 mt-0.5" size={20} />
+          <div className="mb-6 bg-rose-50/80 border border-rose-200/50 rounded-xl p-4 flex items-start gap-3 animate-shake">
+            <AlertCircle className="text-rose-600 shrink-0 mt-0.5" size={20} />
             <div>
-              <p className="text-red-900 font-semibold text-sm">Error</p>
-              <p className="text-red-700 text-sm mt-0.5">{error}</p>
+              <p className="text-rose-900 font-semibold text-sm">Error</p>
+              <p className="text-rose-700 text-sm mt-0.5">{error}</p>
             </div>
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Profile Picture Upload */}
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 overflow-hidden">
-            <div className="bg-gradient-to-r from-slate-700 to-slate-900 px-6 py-4 text-white">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] overflow-hidden">
+            <div className="bg-gradient-to-r from-[#FADADD]/40 to-[#E6D6FF]/40 px-6 py-4 text-[#2B2B2B]">
               <h2 className="text-xl font-bold flex items-center gap-2">
                 <Camera size={24} />
                 Profile Picture
