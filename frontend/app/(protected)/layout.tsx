@@ -24,7 +24,7 @@ export default function ProtectedLayout({
       {/* NAVBAR */}
       <header className="bg-white border-b shadow-sm px-6 py-4 flex justify-between">
         <div className="font-bold text-teal-700 text-lg">
-          PCOS AI Platform
+          Maya Platform
         </div>
 
         <div className="flex items-center gap-4">

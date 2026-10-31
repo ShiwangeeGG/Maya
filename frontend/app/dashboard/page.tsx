@@ -122,10 +122,10 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-teal-50/30 to-purple-50/30">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/20 to-[#D6EAF8]/20">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-teal-600 mx-auto mb-4" />
-          <p className="text-slate-600 font-medium">Loading your dashboard...</p>
+          <Loader2 className="w-12 h-12 animate-spin text-[#E6D6FF] mx-auto mb-4" />
+          <p className="text-[#6B7280] font-medium">Loading your dashboard...</p>
         </div>
       </div>
     );
@@ -136,32 +136,32 @@ export default function DashboardPage() {
   const recentAssessments = assessments.slice(0, 5);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-purple-50/30 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/20 to-[#D6EAF8]/20 py-8 px-4">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-teal-400/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#FADADD]/8 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E6D6FF]/8 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Health Dashboard</h1>
-          <p className="text-slate-600">Your PCOS health overview and insights</p>
+          <h1 className="text-3xl font-bold text-[#2B2B2B] mb-2">Health Dashboard</h1>
+          <p className="text-[#6B7280]">Your PCOS health overview and insights</p>
         </div>
 
         {!hasAssessments ? (
           /* Empty State */
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 p-12 text-center">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#FADADD]/30 p-12 text-center">
             <div className="max-w-md mx-auto">
-              <div className="w-20 h-20 bg-gradient-to-br from-teal-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Activity size={40} className="text-teal-600" />
+              <div className="w-20 h-20 bg-gradient-to-br from-[#FADADD]/30 to-[#E6D6FF]/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Activity size={40} className="text-[#E6D6FF]" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-3">Welcome to Your Health Journey</h2>
-              <p className="text-slate-600 mb-6">
+              <h2 className="text-2xl font-bold text-[#2B2B2B] mb-3">Welcome to Your Health Journey</h2>
+              <p className="text-[#6B7280] mb-6">
                 Take your first PCOS assessment to start tracking your health and receive personalized insights.
               </p>
               <button
                 onClick={() => router.push("/assess")}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-600 to-purple-600 hover:from-teal-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FADADD] to-[#E6D6FF] hover:from-[#F5C8D3] hover:to-[#DCC4F0] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 <Zap size={20} />
                 <span>Start Your First Assessment</span>
@@ -176,67 +176,67 @@ export default function DashboardPage() {
               {/* Current Risk Card */}
               <div className={`${riskTheme.bg} border-2 ${riskTheme.border} rounded-2xl p-6 shadow-lg`}>
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-slate-600">Current Risk</h3>
+                  <h3 className="text-sm font-semibold text-[#6B7280]">Current Risk</h3>
                   {riskTheme.icon}
                 </div>
                 <div className={`text-3xl font-bold ${riskTheme.color} mb-2`}>
                   {stats.currentRisk}
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6B7280]">
                   {(stats.currentProbability! * 100).toFixed(1)}% probability
                 </p>
               </div>
 
               {/* Trend Card */}
-              <div className="bg-white/90 backdrop-blur-xl border-2 border-slate-200 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white/90 backdrop-blur-xl border-2 border-[#E5E7EB] rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-slate-600">Trend</h3>
+                  <h3 className="text-sm font-semibold text-[#6B7280]">Trend</h3>
                   {stats.trend === "down" ? (
-                    <TrendingDown className="text-emerald-600" size={24} />
+                    <TrendingDown className="text-[#DFF5E3]" size={24} />
                   ) : stats.trend === "up" ? (
-                    <TrendingUp className="text-rose-600" size={24} />
+                    <TrendingUp className="text-rose-400" size={24} />
                   ) : (
-                    <Minus className="text-slate-600" size={24} />
+                    <Minus className="text-[#6B7280]" size={24} />
                   )}
                 </div>
                 <div className={`text-3xl font-bold mb-2 ${
-                  stats.trend === "down" ? "text-emerald-600" :
-                  stats.trend === "up" ? "text-rose-600" :
-                  "text-slate-600"
+                  stats.trend === "down" ? "text-[#DFF5E3]" :
+                  stats.trend === "up" ? "text-rose-400" :
+                  "text-[#6B7280]"
                 }`}>
                   {stats.trend === "stable" ? "Stable" : 
                    stats.trend === "down" ? "Improving" :
                    stats.trend === "up" ? "Caution" : "N/A"}
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6B7280]">
                   {stats.trend && stats.trend !== "stable" ? `${stats.riskChange.toFixed(1)}% change` : "No significant change"}
                 </p>
               </div>
 
               {/* Total Assessments Card */}
-              <div className="bg-white/90 backdrop-blur-xl border-2 border-slate-200 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white/90 backdrop-blur-xl border-2 border-[#E5E7EB] rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-slate-600">Assessments</h3>
-                  <FileText className="text-teal-600" size={24} />
+                  <h3 className="text-sm font-semibold text-[#6B7280]">Assessments</h3>
+                  <FileText className="text-[#E6D6FF]" size={24} />
                 </div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+                <div className="text-3xl font-bold text-[#2B2B2B] mb-2">
                   {stats.totalAssessments}
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6B7280]">
                   Total completed
                 </p>
               </div>
 
               {/* Last Assessment Card */}
-              <div className="bg-white/90 backdrop-blur-xl border-2 border-slate-200 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white/90 backdrop-blur-xl border-2 border-[#E5E7EB] rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-slate-600">Last Check</h3>
-                  <Clock className="text-purple-600" size={24} />
+                  <h3 className="text-sm font-semibold text-[#6B7280]">Last Check</h3>
+                  <Clock className="text-[#D6EAF8]" size={24} />
                 </div>
-                <div className="text-lg font-bold text-slate-900 mb-2">
+                <div className="text-lg font-bold text-[#2B2B2B] mb-2">
                   {getDaysAgo(stats.lastAssessmentDate!)}
                 </div>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-[#6B7280]">
                   {new Date(stats.lastAssessmentDate!).toLocaleDateString()}
                 </p>
               </div>
@@ -246,9 +246,9 @@ export default function DashboardPage() {
               {/* Main Content Column */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Risk Trend Chart */}
-                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <BarChart3 size={20} className="text-teal-600" />
+                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] p-6">
+                  <h3 className="text-lg font-bold text-[#2B2B2B] mb-4 flex items-center gap-2">
+                    <BarChart3 size={20} className="text-[#E6D6FF]" />
                     Risk Trend Analysis
                   </h3>
                   
@@ -276,18 +276,18 @@ export default function DashboardPage() {
                       </div>
                       
                       {/* Legend */}
-                      <div className="flex items-center justify-center gap-6 pt-4 border-t border-slate-200">
+                      <div className="flex items-center justify-center gap-6 pt-4 border-t border-[#E5E7EB]">
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-emerald-500 rounded"></div>
-                          <span className="text-sm text-slate-600">Low Risk</span>
+                          <div className="w-4 h-4 bg-[#DFF5E3] rounded"></div>
+                          <span className="text-sm text-[#6B7280]">Low Risk</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-amber-500 rounded"></div>
-                          <span className="text-sm text-slate-600">Moderate Risk</span>
+                          <div className="w-4 h-4 bg-amber-400 rounded"></div>
+                          <span className="text-sm text-[#6B7280]">Moderate Risk</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-rose-500 rounded"></div>
-                          <span className="text-sm text-slate-600">High Risk</span>
+                          <div className="w-4 h-4 bg-rose-400 rounded"></div>
+                          <span className="text-sm text-[#6B7280]">High Risk</span>
                         </div>
                       </div>
                     </div>
@@ -382,16 +382,16 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <Zap size={20} className="text-teal-600" />
+                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] p-6">
+                  <h3 className="text-lg font-bold text-[#2B2B2B] mb-4 flex items-center gap-2">
+                    <Zap size={20} className="text-[#E6D6FF]" />
                     Quick Actions
                   </h3>
                   
                   <div className="space-y-3">
                     <button
                       onClick={() => router.push("/assess")}
-                      className="w-full flex items-center gap-3 p-3 bg-teal-50 hover:bg-teal-100 border-2 border-teal-200 text-teal-700 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 p-3 bg-[#FADADD]/10 hover:bg-[#FADADD]/20 border-2 border-[#FADADD]/30 text-[#E6D6FF] rounded-lg transition-all"
                     >
                       <RefreshCw size={18} />
                       <span className="font-semibold text-sm">New Assessment</span>
@@ -399,7 +399,7 @@ export default function DashboardPage() {
                     
                     <button
                       onClick={() => router.push("/results")}
-                      className="w-full flex items-center gap-3 p-3 bg-purple-50 hover:bg-purple-100 border-2 border-purple-200 text-purple-700 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 p-3 bg-[#E6D6FF]/10 hover:bg-[#E6D6FF]/20 border-2 border-[#E6D6FF]/30 text-[#E6D6FF] rounded-lg transition-all"
                     >
                       <FileText size={18} />
                       <span className="font-semibold text-sm">View Latest Results</span>
@@ -407,7 +407,7 @@ export default function DashboardPage() {
                     
                     <button
                       onClick={() => router.push("/profile")}
-                      className="w-full flex items-center gap-3 p-3 bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 text-slate-700 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 p-3 bg-[#FAFAFC] hover:bg-[#F3F4F6] border-2 border-[#E5E7EB] text-[#2B2B2B] rounded-lg transition-all"
                     >
                       <User size={18} />
                       <span className="font-semibold text-sm">Update Profile</span>
@@ -415,7 +415,7 @@ export default function DashboardPage() {
                     
                     <button
                       onClick={() => router.push("/history")}
-                      className="w-full flex items-center gap-3 p-3 bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 text-slate-700 rounded-lg transition-all"
+                      className="w-full flex items-center gap-3 p-3 bg-[#FAFAFC] hover:bg-[#F3F4F6] border-2 border-[#E5E7EB] text-[#2B2B2B] rounded-lg transition-all"
                     >
                       <Clock size={18} />
                       <span className="font-semibold text-sm">View History</span>
@@ -424,14 +424,14 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Health Tips */}
-                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <Heart size={20} className="text-rose-600" />
+                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] p-6">
+                  <h3 className="text-lg font-bold text-[#2B2B2B] mb-4 flex items-center gap-2">
+                    <Heart size={20} className="text-rose-400" />
                     Daily Health Tip
                   </h3>
                   
-                  <div className="p-4 bg-gradient-to-br from-rose-50 to-purple-50 rounded-lg border border-rose-100">
-                    <p className="text-sm text-slate-700 leading-relaxed">
+                  <div className="p-4 bg-gradient-to-br from-rose-50/60 to-[#FADADD]/20 rounded-lg border border-rose-200/40">
+                    <p className="text-sm text-[#2B2B2B] leading-relaxed">
                       💧 <strong>Stay Hydrated:</strong> Drink at least 8 glasses of water daily. Proper hydration helps regulate hormones and supports metabolic health.
                     </p>
                   </div>
@@ -464,10 +464,10 @@ function getRiskTheme(level: string) {
       };
     default:
       return {
-        color: "text-emerald-700",
-        bg: "bg-emerald-50",
-        border: "border-emerald-200",
-        icon: <CheckCircle2 size={24} className="text-emerald-600" />,
+        color: "text-[#DFF5E3]",
+        bg: "bg-[#DFF5E3]/20",
+        border: "border-[#DFF5E3]/50",
+        icon: <CheckCircle2 size={24} className="text-[#DFF5E3]" />,
       };
   }
 }

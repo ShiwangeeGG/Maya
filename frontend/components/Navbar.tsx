@@ -77,7 +77,7 @@ export default function Navbar() {
             <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
-                alt="PCOS AI Logo"
+                alt="Maya Logo"
                 width={40}
                 height={40}
                 className="object-contain drop-shadow-sm"
@@ -86,10 +86,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col items-start leading-none">
               <span className="text-xl font-extrabold text-slate-900 tracking-tight">
-                PCOS
-                <span className="bg-gradient-to-tr from-emerald-600 to-teal-500 bg-clip-text text-transparent">
-                  AI
-                </span>
+                Maya
               </span>
             </div>
           </button>

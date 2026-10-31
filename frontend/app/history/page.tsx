@@ -128,10 +128,10 @@ export default function HistoryPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-teal-50/30 to-purple-50/30">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/15 to-[#D6EAF8]/15">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-teal-600 mx-auto mb-4" />
-          <p className="text-slate-600 font-medium">Loading assessment history...</p>
+          <Loader2 className="w-12 h-12 animate-spin text-[#E6D6FF] mx-auto mb-4" />
+          <p className="text-[#6B7280] font-medium">Loading assessment history...</p>
         </div>
       </div>
     );
@@ -145,23 +145,23 @@ export default function HistoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-purple-50/30 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFC] via-[#DFF5E3]/15 to-[#D6EAF8]/15 py-8 px-4">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-teal-400/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#FADADD]/8 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E6D6FF]/8 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">Assessment History</h1>
-            <p className="text-slate-600">
+            <h1 className="text-3xl font-bold text-[#2B2B2B] mb-2">Assessment History</h1>
+            <p className="text-[#6B7280]">
               Track your PCOS health journey over time
             </p>
           </div>
 
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+            <button className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-[#E5E7EB] text-[#2B2B2B] rounded-xl font-semibold hover:bg-[#FAFAFC] transition-all">
               <Download size={18} />
               <span>Export</span>
             </button>
@@ -170,15 +170,15 @@ export default function HistoryPage() {
 
         {/* Statistics Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg border border-slate-200/50 p-6">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] p-6">
             <div className="flex items-center gap-3 mb-2">
-              <FileText className="text-teal-600" size={24} />
-              <h3 className="font-semibold text-slate-600">Total</h3>
+              <FileText className="text-[#E6D6FF]" size={24} />
+              <h3 className="font-semibold text-[#6B7280]">Total</h3>
             </div>
-            <p className="text-3xl font-bold text-slate-900">{assessments.length}</p>
+            <p className="text-3xl font-bold text-[#2B2B2B]">{assessments.length}</p>
           </div>
 
-          <div className="bg-rose-50 rounded-2xl shadow-lg border-2 border-rose-200 p-6">
+          <div className="bg-rose-50/60 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-2 border-rose-200/50 p-6">
             <div className="flex items-center gap-3 mb-2">
               <AlertCircle className="text-rose-600" size={24} />
               <h3 className="font-semibold text-rose-700">High Risk</h3>
@@ -186,7 +186,7 @@ export default function HistoryPage() {
             <p className="text-3xl font-bold text-rose-700">{riskCounts.high}</p>
           </div>
 
-          <div className="bg-amber-50 rounded-2xl shadow-lg border-2 border-amber-200 p-6">
+          <div className="bg-amber-50/60 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-2 border-amber-200/50 p-6">
             <div className="flex items-center gap-3 mb-2">
               <Info className="text-amber-600" size={24} />
               <h3 className="font-semibold text-amber-700">Moderate</h3>
@@ -194,27 +194,27 @@ export default function HistoryPage() {
             <p className="text-3xl font-bold text-amber-700">{riskCounts.moderate}</p>
           </div>
 
-          <div className="bg-emerald-50 rounded-2xl shadow-lg border-2 border-emerald-200 p-6">
+          <div className="bg-[#DFF5E3]/40 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-2 border-[#DFF5E3]/60 p-6">
             <div className="flex items-center gap-3 mb-2">
-              <CheckCircle2 className="text-emerald-600" size={24} />
-              <h3 className="font-semibold text-emerald-700">Low Risk</h3>
+              <CheckCircle2 className="text-[#DFF5E3]" size={24} />
+              <h3 className="font-semibold text-[#2B2B2B]">Low Risk</h3>
             </div>
-            <p className="text-3xl font-bold text-emerald-700">{riskCounts.low}</p>
+            <p className="text-3xl font-bold text-[#DFF5E3]">{riskCounts.low}</p>
           </div>
         </div>
 
         {/* Filters and Search */}
-        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/50 p-6">
+        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E5E7EB] p-6">
           <div className="flex flex-col md:flex-row gap-4">
             {/* Filter Buttons */}
             <div className="flex items-center gap-2 flex-wrap">
-              <Filter className="text-slate-600" size={20} />
+              <Filter className="text-[#6B7280]" size={20} />
               <button
                 onClick={() => setFilterType("all")}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   filterType === "all"
-                    ? "bg-teal-600 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-[#E6D6FF] text-white"
+                    : "bg-[#FAFAFC] text-[#6B7280] hover:bg-[#F3F4F6]"
                 }`}
               >
                 All
@@ -224,7 +224,7 @@ export default function HistoryPage() {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   filterType === "high"
                     ? "bg-rose-600 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    : "bg-[#FAFAFC] text-[#6B7280] hover:bg-[#F3F4F6]"
                 }`}
               >
                 High Risk
@@ -234,7 +234,7 @@ export default function HistoryPage() {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   filterType === "moderate"
                     ? "bg-amber-600 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    : "bg-[#FAFAFC] text-[#6B7280] hover:bg-[#F3F4F6]"
                 }`}
               >
                 Moderate
@@ -243,8 +243,8 @@ export default function HistoryPage() {
                 onClick={() => setFilterType("low")}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   filterType === "low"
-                    ? "bg-emerald-600 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-[#DFF5E3] text-[#2B2B2B]"
+                    : "bg-[#FAFAFC] text-[#6B7280] hover:bg-[#F3F4F6]"
                 }`}
               >
                 Low Risk

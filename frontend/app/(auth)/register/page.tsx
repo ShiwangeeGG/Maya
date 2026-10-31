@@ -53,33 +53,33 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#F3F4F6] p-4 lg:p-8">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#FAFAFC] p-4 lg:p-8">
       {/* Main Card */}
-      <div className="bg-white w-full max-w-[1000px] h-auto rounded-[32px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
-        {/* Left Side - Aurora Gradient (Visual & Branding) */}
+      <div className="bg-white w-full max-w-[1000px] h-auto rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col lg:flex-row">
+        {/* Left Side - Soft Gradient (Visual & Branding) */}
         <div className="w-full lg:w-5/12 relative p-8 lg:p-12 flex flex-col justify-end overflow-hidden">
           {/* LOGO PLACEMENT LEFT (Desktop Only) */}
           {/* Positioned top-left, white (inverted) */}
           <div className="absolute top-8 left-8 z-20 hidden lg:block">
             <Image
               src="/logo.png"
-              alt="PCOS AI"
+              alt="Maya"
               width={70}
               height={70}
-              className="object-contain brightness-0 invert"
+              className="object-contain"
             />
           </div>
 
-          {/* THE GRADIENT BACKGROUND */}
-          <div className="absolute inset-0 z-0 bg-emerald-700">
-            <div className="absolute top-[-20%] right-[-20%] w-100 h-100 bg-emerald-300 rounded-full blur-[80px] opacity-70"></div>
-            <div className="absolute bottom-[-10%] left-[-10%] w-75 h-75 bg-emerald-600 rounded-full blur-[60px] opacity-90"></div>
-            <div className="absolute top-[40%] right-[10%] w-50 h-50 bg-teal-400 rounded-full blur-[60px] opacity-60"></div>
+          {/* THE GRADIENT BACKGROUND - Soft Pastel */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#FADADD] via-[#E6D6FF] to-[#D6EAF8]">
+            <div className="absolute top-[-20%] right-[-20%] w-100 h-100 bg-[#FADADD]/40 rounded-full blur-[80px] opacity-70"></div>
+            <div className="absolute bottom-[-10%] left-[-10%] w-75 h-75 bg-[#E6D6FF]/40 rounded-full blur-[60px] opacity-90"></div>
+            <div className="absolute top-[40%] right-[10%] w-50 h-50 bg-[#D6EAF8]/50 rounded-full blur-[60px] opacity-60"></div>
           </div>
 
           {/* Grain texture overlay */}
           <div
-            className="absolute inset-0 z-[1] opacity-[0.15] mix-blend-overlay"
+            className="absolute inset-0 z-[1] opacity-[0.08] mix-blend-overlay"
             style={{
               backgroundImage:
                 "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
@@ -90,19 +90,19 @@ export default function RegisterPage() {
             <div className="w-20 h-20">
               <Image
                 src="/logo.png"
-                alt="PCOS AI"
+                alt="Maya"
                 width={60}
                 height={60}
-                className="object-contain brightness-0 invert"
+                className="object-contain"
               />
             </div>
           </div>
           <div className="relative z-10">
-            <p className="text-emerald-100 text-sm font-medium mb-2">
+            <p className="text-[#6B7280] text-sm font-medium mb-2">
               You can easily
             </p>
-            <h2 className="text-white text-3xl font-bold leading-tight">
-              Get access to your personal PCOS health tracking and AI-powered
+            <h2 className="text-[#2B2B2B] text-3xl font-semibold leading-tight">
+              Get access to your personal PCOS health tracking and ML-powered
               insights
             </h2>
           </div>
@@ -112,17 +112,17 @@ export default function RegisterPage() {
         <div className="w-full lg:w-7/12 bg-white p-8 lg:p-16 flex flex-col justify-center">
           <div className="max-w-[420px] mx-auto w-full">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-slate-900 mb-2">
+              <h1 className="text-3xl font-semibold text-[#2B2B2B] mb-2">
                 Create an account
               </h1>
-              <p className="text-slate-500 text-sm">
-                Access your health assessments, AI predictions, and personalized
+              <p className="text-[#6B7280] text-sm">
+                Access your health assessments, ML predictions, and personalized
                 recommendations anytime, anywhere.
               </p>
             </div>
 
             {error && (
-              <div className="mb-6 p-3 rounded-lg bg-red-50 text-red-600 text-sm font-medium border border-red-100">
+              <div className="mb-6 p-3 rounded-lg bg-rose-50/80 text-rose-600 text-sm font-medium border border-rose-200/50">
                 {error}
               </div>
             )}
@@ -130,7 +130,7 @@ export default function RegisterPage() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-900 block">
+                  <label className="text-sm font-semibold text-[#2B2B2B] block">
                     First name
                   </label>
                   <input
@@ -138,12 +138,12 @@ export default function RegisterPage() {
                     placeholder="John"
                     value={form.first_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#E5E7EB] text-[#2B2B2B] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#FADADD]/30 focus:border-[#FADADD] transition-all bg-white"
                     required
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-900 block">
+                  <label className="text-sm font-semibold text-[#2B2B2B] block">
                     Last name
                   </label>
                   <input
@@ -151,14 +151,14 @@ export default function RegisterPage() {
                     placeholder="Doe"
                     value={form.last_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#E5E7EB] text-[#2B2B2B] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#FADADD]/30 focus:border-[#FADADD] transition-all bg-white"
                     required
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-bold text-slate-900 block">
+                <label className="text-sm font-semibold text-[#2B2B2B] block">
                   Email
                 </label>
                 <input
@@ -167,13 +167,13 @@ export default function RegisterPage() {
                   placeholder="name@example.com"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl border border-[#E5E7EB] text-[#2B2B2B] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#FADADD]/30 focus:border-[#FADADD] transition-all bg-white"
                   required
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-bold text-slate-900 block">
+                <label className="text-sm font-semibold text-[#2B2B2B] block">
                   Password
                 </label>
                 <div className="relative">
@@ -183,13 +183,13 @@ export default function RegisterPage() {
                     placeholder="••••••••••••"
                     value={form.password}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all pr-12"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#E5E7EB] text-[#2B2B2B] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#FADADD]/30 focus:border-[#FADADD] transition-all pr-12 bg-white"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] hover:text-[#6B7280]"
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
@@ -199,17 +199,17 @@ export default function RegisterPage() {
                   <div className="flex gap-2 mt-2 h-1">
                     <div
                       className={`flex-1 rounded-full ${
-                        strength > 0 ? "bg-emerald-600" : "bg-slate-200"
+                        strength > 0 ? "bg-[#FADADD]" : "bg-[#E5E7EB]"
                       }`}
                     ></div>
                     <div
                       className={`flex-1 rounded-full ${
-                        strength > 1 ? "bg-emerald-600" : "bg-slate-200"
+                        strength > 1 ? "bg-[#E6D6FF]" : "bg-[#E5E7EB]"
                       }`}
                     ></div>
                     <div
                       className={`flex-1 rounded-full ${
-                        strength > 2 ? "bg-emerald-600" : "bg-slate-200"
+                        strength > 2 ? "bg-[#D6EAF8]" : "bg-[#E5E7EB]"
                       }`}
                     ></div>
                   </div>
@@ -219,7 +219,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 mt-4"
+                className="w-full bg-gradient-to-r from-[#FADADD] to-[#E6D6FF] hover:from-[#F5C8D3] hover:to-[#DCC4F0] text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-[#E6D6FF]/30 hover:shadow-[#E6D6FF]/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-4"
               >
                 {loading ? (
                   <Loader2 className="animate-spin" size={20} />
@@ -229,11 +229,11 @@ export default function RegisterPage() {
               </button>
             </form>
 
-            <p className="text-center text-sm text-slate-500 mt-8">
+            <p className="text-center text-sm text-[#6B7280] mt-8">
               Already have an account?{" "}
               <a
                 href="/login"
-                className="text-emerald-600 font-semibold hover:underline"
+                className="text-[#E6D6FF] font-semibold hover:text-[#FADADD] transition-colors"
               >
                 Log in
               </a>
